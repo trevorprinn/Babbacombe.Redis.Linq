@@ -18,4 +18,10 @@ By default, the ISerializers use JsonConvert to treat the keys and/or values as 
 
 ## Serializers
 
-These are simple classes, implementing `ISeralizer<T>`, that have a method to convert a T to string (Serialize), and another to convert a string to a T (Deserialize). If you are using only strings and objects serialized in Json there is no need to supply your own seralizers, or even pass any into the constructors, as the supplied serializers will automatically be created and handle the serialization operations by default.
+These are simple classes, implementing `ISeralizer<T>`, that have a method to convert a T to string (Serialize), and another to convert a string to
+a T (Deserialize). If you are using only strings and objects serialized in Json there is no need to supply your own seralizers, or even pass any into
+the constructors, as the supplied serializers will automatically be created and handle the serialization operations by default.
+<hr/>
+
+The library is available from the [Babbacombe myget (nuget) feed](https://www.myget.org/gallery/babbacom-feed)    
+https://www.myget.org/F/babbacom-feed/api/v2
