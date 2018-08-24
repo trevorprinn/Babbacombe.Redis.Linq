@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.28010.0
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Babbacombe.Redis.Linq", "Babbacombe.Redis.Linq.csproj", "{964850E0-F5F1-47D7-90B6-A4047B7F1F06}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Babbacombe.Redis.StrongName.Linq", "Babbacombe.Redis.StrongName.Linq.csproj", "{791729B5-44EE-4457-BFD7-95CF941A312A}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -11,15 +11,15 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{964850E0-F5F1-47D7-90B6-A4047B7F1F06}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{964850E0-F5F1-47D7-90B6-A4047B7F1F06}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{964850E0-F5F1-47D7-90B6-A4047B7F1F06}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{964850E0-F5F1-47D7-90B6-A4047B7F1F06}.Release|Any CPU.Build.0 = Release|Any CPU
+		{791729B5-44EE-4457-BFD7-95CF941A312A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{791729B5-44EE-4457-BFD7-95CF941A312A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{791729B5-44EE-4457-BFD7-95CF941A312A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{791729B5-44EE-4457-BFD7-95CF941A312A}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
-		SolutionGuid = {B0F5A542-4CA1-44AF-B120-196AACA2CA85}
+		SolutionGuid = {224FAFEF-C4B4-498E-B611-9D007A5FA981}
 	EndGlobalSection
 EndGlobal

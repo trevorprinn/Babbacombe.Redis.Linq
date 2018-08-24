@@ -1,7 +1,7 @@
 # Babbacombe.Redis.Linq
 Linq extensions for Redis List and Hash Keys.
 
-**This library is WIP and has not been properly tested yet.**
+**This library is WIP and has not been fully tested yet.**
 
 ## RedisListKey
 
@@ -25,3 +25,16 @@ the constructors, as the supplied serializers will automatically be created and 
 
 The library is available from the [Babbacombe myget (nuget) feed](https://www.myget.org/gallery/babbacom-feed)    
 https://www.myget.org/F/babbacom-feed/api/v2
+
+## Redis NuGet
+
+There are currently 2 almost identical Redis packages in NuGet, **StackExchange.Redis** and
+**StackExchange.Redis.StrongName**. It's difficult to have both in the same
+project, because they have different classes that use the same namespaces.
+
+There are now
+2 packages for this project, **Babbacombe.Redis.Linq** and **Babbacombe.Redis.StrongName.Linq**,
+and the one to use depends on which **StackExchange.Redis** library is in use.
+
+For example, a project that uses **StackExchange.Redis.Extensions.Core** will need to use
+**Babbacombe.Redis.StrongName.Linq**.
