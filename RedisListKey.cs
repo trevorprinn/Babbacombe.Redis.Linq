@@ -15,7 +15,7 @@ namespace Babbacombe.Redis.Linq {
     public class RedisListKey<T> : IList<T> {
         public IDatabase Database { get; private set; }
         public string Key { get; private set; }
-        private ISerializer<T> _serializer;
+        private readonly ISerializer<T> _serializer;
 
         public RedisListKey(IDatabase database, string key, ISerializer<T> serializer = null) {
             Database = database;
@@ -44,8 +44,8 @@ namespace Babbacombe.Redis.Linq {
         }
 
         public void CopyTo(T[] array, int arrayIndex) {
-            var values = Database.ListRange(Key, arrayIndex, Length - arrayIndex - 1);
-            for (int i = 0; i < values.Length; i++) array[i] = _serializer.Deserialize(values[i]);
+            var values = Database.ListRange(Key);
+            for (int i = 0; i < values.Length; i++) array[arrayIndex + i] = _serializer.Deserialize(values[i]);
         }
 
         public IEnumerator<T> GetEnumerator() => new RedisListKeyEnumerator<T>(Database, Key, _serializer);
@@ -82,7 +82,7 @@ namespace Babbacombe.Redis.Linq {
     class RedisListKeyEnumerator<T> : IEnumerator<T> {
         private int _pos = -1;
         private RedisValue[] _values;
-        private ISerializer<T> _serializer;
+        private readonly ISerializer<T> _serializer;
 
         public RedisListKeyEnumerator(IDatabase db, string key, ISerializer<T> serializer) {
             _values = db.ListRange(key, 0, db.ListLength(key) - 1);
