@@ -1,10 +1,7 @@
 ﻿using StackExchange.Redis;
-using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Babbacombe.Redis.Linq {
     public class RedisHashKey : RedisHashKey<string, string> {

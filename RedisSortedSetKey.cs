@@ -1,9 +1,8 @@
 ﻿using StackExchange.Redis;
 using System;
-using System.Collections.Generic;
-using System.Text;
-using System.Linq;
 using System.Collections;
+using System.Collections.Generic;
+using System.Linq;
 
 namespace Babbacombe.Redis.Linq {
 
@@ -11,14 +10,9 @@ namespace Babbacombe.Redis.Linq {
         double Score { get; }
     }
 
-    public class RedisSortedSetKey<T> : IList<T> where T : IScorable {
+    public class RedisSortedSetKey<T> : IRedisList<T> where T : IScorable {
         public IDatabase Database { get; private set; }
         public string Key { get; private set; }
-
-        public int Count => throw new NotImplementedException();
-
-        public bool IsReadOnly => throw new NotImplementedException();
-
         private readonly ISerializer<T> _serializer;
 
         public RedisSortedSetKey(IDatabase database, string key, ISerializer<T> serializer = null) {
@@ -27,12 +21,18 @@ namespace Babbacombe.Redis.Linq {
             _serializer = serializer ?? new JsonSerializer<T>();
         }
 
+        public int Count => (int)Database.SortedSetLength(Key);
+
+        public int Length => (int)Database.SortedSetLength(Key);
+
+        public bool IsReadOnly => false;
+
         public T this[int index] {
             get => _serializer.Deserialize(Database.SortedSetRangeByRank(Key, index, index).FirstOrDefault());
             set => throw new NotImplementedException("Cannot add to a RedisSortedSet by setting the item's index");
         }
 
-        public T this[double score] => _serializer.Deserialize(Database.SortedSetRangeByScore(Key, score, score).First());
+        public T this[double score] => _serializer.Deserialize(Database.SortedSetRangeByScore(Key, score, score).FirstOrDefault());
 
         public void Add(T item) => Database.SortedSetAdd(Key, _serializer.Serialize(item), item.Score);
 

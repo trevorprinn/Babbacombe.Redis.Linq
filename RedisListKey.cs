@@ -1,18 +1,20 @@
 ﻿using StackExchange.Redis;
-using System;
 using System.Collections;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Babbacombe.Redis.Linq {
+
+    public interface IRedisList<T> : IList<T> {
+        IDatabase Database { get; }
+        string Key { get; }
+        int Length { get; }
+    }
 
     public class RedisListKey : RedisListKey<string> {
         public RedisListKey(IDatabase database, string key) : base(database, key, new StringSerializer()) { }
     }
 
-    public class RedisListKey<T> : IList<T> {
+    public class RedisListKey<T> : IRedisList<T> {
         public IDatabase Database { get; private set; }
         public string Key { get; private set; }
         private readonly ISerializer<T> _serializer;
