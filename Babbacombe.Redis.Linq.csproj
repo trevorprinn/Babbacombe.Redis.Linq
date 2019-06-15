@@ -10,11 +10,15 @@
     <SignAssembly>false</SignAssembly>
     <Authors>Trevor Prinn</Authors>
     <Company>Babbacombe Computers Ltd</Company>
-    <Description>Linq extensions for Redis List and Hash Keys.</Description>
+    <Description>Linq extensions for Redis List, Hash and Sorted Set Keys.</Description>
     <Copyright>Copyright © Babbacombe Computers Ltd 2018-2019</Copyright>
     <PackageLicenseUrl></PackageLicenseUrl>
     <PackageProjectUrl>https://github.com/trevorprinn/Babbacombe.Redis.Linq</PackageProjectUrl>
     <PackageLicenseFile>LICENSE.txt</PackageLicenseFile>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+    <DocumentationFile>C:\Users\Trev\Documents\Babbacombe.Redis.Linq\Babbacombe.Redis.Linq.xml</DocumentationFile>
   </PropertyGroup>
 
   <ItemGroup>
@@ -23,10 +27,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <None Update="LICENSE.txt">
-      <Pack>True</Pack>
-      <PackagePath></PackagePath>
-    </None>
     <None Include="LICENSE.txt">
       <Pack>True</Pack>
       <PackagePath></PackagePath>

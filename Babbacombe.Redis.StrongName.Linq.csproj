@@ -2,15 +2,15 @@
 
   <PropertyGroup>
     <TargetFramework>netstandard2.0</TargetFramework>
-    <Version>1.1.1</Version>
+    <Version>1.2.0</Version>
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
     <Authors>Trevor Prinn</Authors>
     <Company>Babbacombe Computers Ltd</Company>
-    <Description>Linq extensions for Redis List and Hash Keys.</Description>
-    <Copyright>Copyright © Babbacombe Computers Ltd 2018</Copyright>
+    <Description>Linq extensions for Redis List, Hash and Sorted Set Keys.</Description>
+    <Copyright>Copyright © Babbacombe Computers Ltd 2018-2019</Copyright>
     <PackageLicenseUrl></PackageLicenseUrl>
     <PackageProjectUrl>https://github.com/trevorprinn/Babbacombe.Redis.Linq</PackageProjectUrl>
-    <PackageLicenseFile>LICENSE</PackageLicenseFile>
+    <PackageLicenseFile>LICENSE.txt</PackageLicenseFile>
   </PropertyGroup>
 
   <ItemGroup>
@@ -19,7 +19,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <None Include="LICENSE">
+    <None Include="LICENSE.txt">
       <Pack>True</Pack>
       <PackagePath></PackagePath>
     </None>
